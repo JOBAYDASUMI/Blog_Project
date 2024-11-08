@@ -1,0 +1,119 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            width: 300px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="number"],
+        input[type="tel"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            border: none;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background-color: #218838;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Register</h2>
+        <form action="" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username">
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email">
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password">
+
+            <label for="confirm_password">Confirm Password:</label>
+            <input type="password" id="confirm_password" name="confirm_password" >
+
+            <label for="user_type">User Type:</label>
+            <select id="user_type" name="user_type">
+                <option value="">Select Type</option>
+                <option value="viewers">Viewers</option>
+                <option value="bloogger">Bloogger</option>
+                <!-- Add more user types as needed -->
+            </select>
+
+
+            <label for="gender">Gender Type:</label>
+            <select id="gender" name="gender">
+                <option value="">Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="others">Others</option>
+                
+                <!-- Add more user types as needed -->
+            </select>
+
+            <label for="age">Age:</label>
+            <input type="text" id="age" name="age" min="0">
+
+            <label for="contact_no">Contact No:</label>
+            <input type="text" id="contact_no" name="contact_no" >
+
+            <label for="profile_pic">Profile Pic:</label>
+            <input type="file" id="profile_pic" name="profile_pic" >
+
+            <a href="{% url 'loginPage' %}">Already Have An Account</a>
+
+            <button type="submit">Register</button>
+        </form>
+    </div>
+</body>
+</html>
+
+    
